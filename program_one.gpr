@@ -1,0 +1,4 @@
+project program_one is 
+   for main use ("binpals.adb");
+   for object_dir use "obj";
+end program_one;

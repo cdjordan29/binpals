@@ -1,0 +1,19 @@
+[GENERATED OBJECT FILE]
+b__binpals.o
+[PROJECT FILES]
+G:\Radford Classes\itec320 - Ada\Program1\program_one.gpr
+20170127173212
+[BOUND OBJECT FILES]
+G:\Radford Classes\itec320 - Ada\Program1\obj\binpals.o
+[GENERATED SOURCE FILES]
+b__binpals.ads
+b__binpals.adb
+b__binpals.ali
+[RESULTING OPTIONS]
+-LG:\Radford Classes\itec320 - Ada\Program1\obj\
+-LG:\Radford Classes\itec320 - Ada\Program1\obj\
+-LC:/gnat/2016/lib/gcc/i686-pc-mingw32/4.9.4/adalib/
+-static
+-static-libgcc
+C:/gnat/2016/lib/gcc/i686-pc-mingw32/4.9.4/adalib/libgnat.a
+-Wl,--stack=0x2000000

@@ -1,0 +1,120 @@
+with Ada.Text_IO; use Ada.Text_IO;
+with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
+
+
+procedure binpals is
+
+   procedure printReverse (secondOperation: in Integer) is
+
+      --Declaration of variables for printReverse
+
+      --Variables used to calculate the reversed decimal number
+      reverseBinaryBit1: Integer;
+      newCalculatedDecimal: Integer := 0;
+      baseTenNumber1: Integer := secondOperation;
+
+      --Variables used to print the reverse binary bits
+      reverseBinaryBit2: Integer;
+      baseTenNumber2: Integer := secondOperation;
+
+   begin
+
+      New_Line;
+      put("   Rev  :");
+
+      --calculates the reverse binary number
+      FOR K IN REVERSE 0 .. 32 loop
+
+         reverseBinaryBit1 := baseTenNumber1 mod 2;
+         if(reverseBinaryBit1 = 1) then
+            newCalculatedDecimal := newCalculatedDecimal + (2**(k));
+         end if;
+         baseTenNumber1 := baseTenNumber1 / 2;
+
+      end loop;
+
+      put(newCalculatedDecimal); put(" ");
+
+       --prints the binary bits in reverse
+       for l in  0 .. 32 loop
+
+         reverseBinaryBit2 := baseTenNumber2 mod 2;
+         put(Item => reverseBinaryBit2, Width => 1);
+         baseTenNumber2 := baseTenNumber2 / 2;
+
+      end loop;
+
+   end printReverse;
+
+   procedure printForward (firstOperation: in Integer) is
+
+      --Declaration of variables for printForward
+      passToReverse: Integer := firstOperation;
+      comparable: Integer := firstOperation;
+
+   begin
+      --prints the binary bits in forwards
+      for j in reverse 0 .. 32 loop
+
+         if ((2**j) > comparable) then
+            put(0, Width => 1);
+         end if;
+
+         if ((2**j) <= comparable) then
+            put(1, Width => 1);
+            comparable := (comparable - (2**j));
+         end if;
+
+      end loop;
+
+      printReverse(passToReverse);
+
+   end printForward;
+
+   --print takes in the first int to establish the stopping condition of
+   --the for loop
+   procedure setup (stop: in Integer) is
+
+      --Declaration of variables for print
+      start: CONSTANT Integer := 1;
+
+      --Declaration of Modular type for input numbers of 0 .. 4 billion
+      --type zeroToFourBillion is mod 2**32;
+      --package PositiveFourBillion_IO is new
+        --Text_IO.Modular_IO (Num => zeroToFourBillion);--
+      --use PositiveFourBillion_IO;
+
+      --input: zeroToFourBillion;
+      input: Integer;
+
+   begin
+
+      for i in 1 .. stop loop
+
+         --Getting the next number to perform operations
+         get(input);
+
+         New_Line;
+         put("Original: "); put(input); put(" ");
+
+         --Sending input to operations
+         printForward(input);
+
+      end loop;
+
+   end setup;
+
+--Declaration of variables for procedure binpals
+
+   loopController: Integer;
+
+--Begin binpals
+begin
+
+   --Get the first int which will be a loop control variable
+   get(loopController);
+   --Pass loopController to print
+   printForward(loopController);
+
+--End binpals
+end binpals;

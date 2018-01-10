@@ -1,0 +1,135 @@
+V "GNAT Lib v2016"
+M P W=b
+A -gnatA
+A -mtune=generic
+A -march=pentium4
+P ZX
+
+RN
+RV NO_EXCEPTION_HANDLERS
+RV NO_EXCEPTIONS
+RV NO_IO
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_PRAGMAS
+RV SPARK_05
+
+U binpals%b		binpals.adb		47ad56a0 NE OO SU IL
+W ada%s			ada.ads			ada.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+Z ada.text_io.modular_aux%s  a-timoau.adb	a-timoau.ali
+W ada.text_io.modular_io%s
+Z system%s		system.ads		system.ali
+Z system.unsigned_types%s  s-unstyp.ads		s-unstyp.ali
+
+D ada.ads		20160516092928 3ffc8e18 ada%s
+D a-except.ads		20160516092928 291912d5 ada.exceptions%s
+D a-ioexce.ads		20160516092926 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20160516092928 119b8fb3 ada.streams%s
+D a-tags.ads		20160516092932 01f5e3ef ada.tags%s
+D a-textio.ads		20160516092932 386df5d4 ada.text_io%s
+D a-timoau.ads		20160516092932 01c06610 ada.text_io.modular_aux%s
+D a-timoio.ads		20160516092928 d32407b9 ada.text_io.modular_io%s
+D a-timoio.adb		20160516092932 de0ea1c6 ada.text_io.modular_io%b
+D a-unccon.ads		20160516092930 f9eb8f06 ada.unchecked_conversion%s
+D binpals.adb		20170209192732 7fc0a374 binpals%b
+D interfac.ads		20160516092928 5ab55268 interfaces%s
+D i-cstrea.ads		20160516092926 e53d8b8e interfaces.c_streams%s
+D system.ads		20160516092930 2da59038 system%s
+D s-crtl.ads		20160516092926 0ebbdb71 system.crtl%s
+D s-exctab.ads		20160516092930 54135002 system.exception_table%s
+D s-ficobl.ads		20160516092932 078245e4 system.file_control_block%s
+D s-parame.ads		20160516092932 7e2a0d7f system.parameters%s
+D s-soflin.ads		20160516092928 14e1eb6c system.soft_links%s
+D s-stache.ads		20160516092932 a37c21ec system.stack_checking%s
+D s-stalib.ads		20160516092930 09bd3940 system.standard_library%s
+D s-stoele.ads		20160516092932 2dc34a04 system.storage_elements%s
+D s-traent.ads		20160516092928 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20160516092930 34867c83 system.unsigned_types%s
+D s-wchcon.ads		20160516092930 1b7d22d2 system.wch_con%s
+X 1 ada.ads
+16K9*Ada 19e8 11|5r6 5r23 12r6
+X 6 a-textio.ads
+49K13*Text_IO 471e16 11|5w10 5r27 12r10
+73I12*Field{integer}
+166U14*New_Line 11|99s7 120s7 192s7 259s7 325s10
+242U14*Put 11|22s10 25s10 100s7 102s7 193s7 195s7 260s7 262s7 326s10 326s41
+X 8 a-timoio.ads
+44M9 Num 11|12r30
+46k21*Modular_IO 85e27 11|12r18
+56U14 Get 11|322s10[11] 342s4[11]
+66U14 Put 11|101s7[11] 111s13[11] 114s13[11] 194s7[11] 204s13[11] 208s13[11]
+. 261s7[11] 268s10[11] 290s13[11] 294s13[11] 326s29[11]
+67m7 Item{11|10M9} 11|268r14[11]
+68i7 Width{6|73I12} 11|111r20[11] 114r20[11] 204r20[11] 208r20[11] 268r41[11]
+. 290r20[11] 294r20[11]
+X 11 binpals.adb
+7U11*binpals 7b11 347l5 347t12
+10M9 Integer 12r37 17r56 32r48 32r79 34r29 35r26 36r27 38r22 43r25 44r25
+. 126r45 126r77 129r26 130r42 132r20 137r25 138r25 221r48 224r26 225r29 226r23
+. 229r26 230r23 234r23 238r24 280r47 282r22 283r19 307r30 310r23 314r14 336r20
+11K12 PositiveFourBillion_IO[8|46] 13r8
+17U14 diffOrSame 17b14 17>25 17>38 28l8 28t18 96s7 256s7
+17m25 originalNum{10M9} 21r10 24r14
+17m38 calculatedNum{10M9} 21r24 24r29
+32U14 pruneCalculated 32b14 32>30 32=57 122l8 122t23 214s7
+32m30 calculatedNum{10M9} 34r40 35r37 36r38 44r36
+32m57 firstPruneNum{10M9} 96r18
+34m7 calculatedComparable{10M9} 52r26 65r27 72m10 72r34
+35m7 calculatedToPrint{10M9} 108r20 110r25 115m13 115r35
+36m7 calculatedToPrint1{10M9} 84r25 86m13 86r36
+37i7 calculatedPruneStart{natural} 68m13 78r39 82r26 106r26
+37i29 calculatedPruneStop{natural} 53m13 78r17 82r50 106r50
+38m7 calculatedBit{10M9} 65m10 67r13
+39i7 countEnds3{natural} 54m13 54r27 57r20
+39i19 countEnds4{natural} 69m13 69r27 74r20
+42i7 range2{natural} 78m7 87r57 91r20 92m10 92r20
+43m7 calculatedPrune2{10M9} 87m13 87r34 96r33 101r11
+44m7 pruneComparable2{10M9}
+45i7 countExponent{natural}
+50i11 iii{integer} 52r18 53r36
+63i11 jjj{integer} 68r37
+82i11 lll{integer} 84r17 86r61
+106i11 kkk{integer} 110r18 115r59
+126U14 pruneOriginal 126b14 126>28 126=54 216l8 216t21 274s7
+126m28 originalNum1{10M9} 129r37 130r53 138r36
+126m54 calculatedNum1{10M9} 214r23
+129m7 decimalComparable{10M9} 146r25 159r25 166m10 166r31
+130m7 originalToPrint{10M9} 201r20 203r24 209m13 209r33
+130m24 originalToPrint1{10M9} 179r24 181m13 181r34
+131i7 originalPruneStart{natural} 162m13 172r37 177r25 199r25
+131i27 originalPruneStop{natural} 147m13 172r17 177r47 199r47
+132m7 originalBit{10M9} 159m10 161r13
+133i7 countEnds1{natural} 148m13 148r27 151r20
+133i19 countEnds2{natural} 163m13 163r27 168r20
+136i7 range1{natural} 172m7 182r57 186r20 187m10 187r20
+137m7 calculatedPrune1{10M9} 182m13 182r34 194r11 214m39 214r39
+138m7 pruneComparable1{10M9}
+144i11 ii{integer} 146r18 147r34
+157i11 jj{integer} 162r35
+177i11 ll{integer} 179r17 181r57
+199i11 kk{integer} 203r18 209r55
+221U14 printReverse 221b14 221>28 276l8 276t20 301s7
+221m28 secondOperation{10M9} 226r34 230r34 234r34 238r35
+224m7 reverseBinaryBit1{10M9} 245m10 246r13
+225m7 newCalculatedDecimal{10M9} 247m13 247r37 256r34 261r11 274m38 274r38
+226m7 baseTenNumber1{10M9} 245r31 249m10 249r28
+229m7 reverseBinaryBit2{10M9} 267m10 268r22
+230m7 baseTenNumber2{10M9} 267r31 269m10 269r28
+234m7 originalNumber{10M9} 256r18
+238m7 originalDecimal{10M9} 274r21
+243i11 k{integer} 247r65
+265i11 l{integer}
+280U14 printForward 280b14 280>28 303l8 303t20 329s10
+280m28 firstOperation{10M9} 282r33 283r30
+282m7 passToReverse{10M9} 301r20
+283m7 comparable{10M9} 289r23 293r24 295m13 295r28
+287i11 j{integer} 289r18 293r18 295r45
+307U14 setup 307b14 307>21 333l8 333t13 344s4
+307m21 stop{10M9} 319r21
+310m7 start{10M9}
+314m7 input{10M9} 322m14 326r33 329r23
+319m11 i{10M9}
+336m4 loopController{10M9} 342m8 344r10
+

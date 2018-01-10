@@ -1,0 +1,150 @@
+
+WITH Ada.Text_IO;
+USE Ada.Text_IO;
+
+WITH Ada.Integer_Text_IO;
+USE Ada.Integer_Text_IO;
+
+
+PROCEDURE Binpals IS
+
+   TYPE Mod32 IS mod 2**36;
+   PACKAGE Mod32_IO IS NEW Modular_Io ( Num => Mod32);
+   USE Mod32_IO;
+   PACKAGE M RENAMES Mod32_IO;
+   Type Integer is new Integer
+
+
+
+   --Must create an I/O package for MinuteType
+   --Input : ZeroToFourBillion;
+
+   PROCEDURE PrintReverse (
+         SecondOperation : IN     Integer) IS
+
+      --Declaration of variables for printReverse
+
+      --Variables used to calculate the reversed decimal number
+      ReverseBinaryBit1    : Integer;
+      NewCalculatedDecimal : Integer := 0;
+      BaseTenNumber1       : Integer := SecondOperation;
+
+      --Variables used to print the reverse binary bits
+      ReverseBinaryBit2 : Integer;
+      BaseTenNumber2    : Integer := SecondOperation;
+
+   BEGIN
+
+      New_Line;
+      Put("   Rev  :");
+
+      --calculates the reverse binary number
+      FOR K IN REVERSE 0 .. 32 LOOP
+
+         ReverseBinaryBit1 := BaseTenNumber1 mod 2;
+         IF(ReverseBinaryBit1 = 1) THEN
+            NewCalculatedDecimal := NewCalculatedDecimal + (2**(K));
+         END IF;
+         BaseTenNumber1 := BaseTenNumber1 / 2;
+
+      END LOOP;
+
+      Put(NewCalculatedDecimal);
+      Put(" ");
+
+      --prints the binary bits in reverse
+      FOR L IN  0 .. 32 LOOP
+
+         ReverseBinaryBit2 := BaseTenNumber2 mod 2;
+         Put(
+            Item  => ReverseBinaryBit2,
+            Width => 1);
+         BaseTenNumber2 := BaseTenNumber2 / 2;
+
+      END LOOP;
+
+   END PrintReverse;
+
+   PROCEDURE PrintForward IS
+
+      --Declaration of variables for printForward
+      PassToReverse : Integer;
+      Comparable    : Integer;
+      J : mod32;
+
+
+   BEGIN
+
+      Get(Comparable);
+      Put(Comparable);
+      M.Put(2**33);
+
+
+
+      --prints the binary bits in forwards
+      While J < 32 LOOP
+         IF ((2**J) > Comparable) THEN
+            M.Put(0, Width => 1);
+         ELSIF ((2**J) <= Comparable) THEN
+            M.Put(1, Width => 1);
+            Comparable := (Comparable - (2**J));
+         END IF;
+
+      END LOOP;
+
+      --PrintReverse(PassToReverse);
+
+   END PrintForward;
+
+   --print takes in the first int to establish the stopping condition of
+   --the for loop
+   PROCEDURE Setup (
+         Stop : IN     Integer) IS
+
+      --Declaration of variables for print
+      Start : CONSTANT Integer := 1;
+
+      --Declaration of Modular type for input numbers of 0 .. 4 billion
+      --type zeroToFourBillion is mod 2**32;
+      --package PositiveFourBillion_IO is new
+      --Text_IO.Modular_IO (Num => zeroToFourBillion);--
+      --use PositiveFourBillion_IO;
+      --input: zeroToFourBillion;
+      Input : Integer;
+
+   BEGIN
+
+      FOR I IN 1 .. Stop LOOP
+
+         --Getting the next number to perform operations
+         Get(Input);
+
+         New_Line;
+         Put("Original: ");
+         Put(Input);
+         Put(" ");
+
+         --Sending input to operations
+         PrintForward;
+
+      END LOOP;
+
+   END Setup;
+
+   --Declaration of variables for procedure binpals
+
+   LoopController : Integer;
+
+   --Begin binpals
+BEGIN
+
+   --Get the first int which will be a loop control variable
+   Get(LoopController);
+   --Pass loopController to print
+   FOR I IN 1.. LoopController LOOP
+      PrintForward;
+   END LOOP;
+
+
+   --End binpals
+END Binpals;
